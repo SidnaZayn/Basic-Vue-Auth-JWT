@@ -1,0 +1,16 @@
+@import './base.css';
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.btn {
+  color: #41b883 !important;
+  border: #41b883 1px solid !important;
+}
+.btn:hover {
+  background-color: #41b883 !important;
+  color: #fff !important;
+}
