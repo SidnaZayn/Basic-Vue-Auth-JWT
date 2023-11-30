@@ -3,6 +3,7 @@
     <RouterLink to="/" class="btn me-2" type="button" v-if="!store.user">login</RouterLink>
     <RouterLink to="/no-auth" class="btn me-2" type="button">no auth</RouterLink>
     <RouterLink to="/with-auth" class="btn me-2" type="button">with auth</RouterLink>
+    <button class="btn me-2" @click="store.logout" type="button" v-if="store.user">Logout</button>
   </div>
 </template>
 

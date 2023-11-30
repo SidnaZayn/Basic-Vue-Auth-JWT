@@ -5,6 +5,7 @@ export const useAuthStore = defineStore({
     state: () => ({
         user: null,
         token: null,
+        isAdmin: false,
         tokenExpDate: null,
         countdownVal: {
             days: 0,
@@ -17,6 +18,7 @@ export const useAuthStore = defineStore({
         initialize() {
             // Retrieve the token from localStorage on page load
             this.user = JSON.parse(localStorage.getItem('userInfo'));
+            this.isAdmin = JSON.parse(localStorage.getItem('isAdmin'));
             this.token = localStorage.getItem('Authorization');
         },
         logout() {
@@ -24,6 +26,7 @@ export const useAuthStore = defineStore({
             localStorage.removeItem('userInfo');
             localStorage.removeItem('isLoggedIn');
             localStorage.removeItem('title');
+            localStorage.removeItem('isAdmin');
             this.user = null;
             this.token = null;
             window.location.reload();
